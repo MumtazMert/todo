@@ -18,11 +18,16 @@ export default function TextLine() {
     setText("");
   };
 
+  const handleDeleteClick = (index: number) => {
+    const newSavedTexts = savedTexts.filter((_, i) => i !== index);
+    setSavedTexts(newSavedTexts);
+  };
+
   return (
     <>
       <InputField text={text} setText={setText} />
       <AddButton onAddClick={() => handleAddClick(text)} />
-      <SavedTextList savedTexts={savedTexts} />
+      <SavedTextList savedTexts={savedTexts} onDeleteClick={handleDeleteClick} />
     </>
   );
 }
