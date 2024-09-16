@@ -1,7 +1,11 @@
-export default function deleteButton() {
-  return (
-    <>
-    <button>Delete</button>
-    </>
-  )
+"use client";
+
+interface DeleteButtonProps {
+  onDeleteClick: () => void;
 }
+
+const DeleteButton: React.FC<DeleteButtonProps> = ({ onDeleteClick }) => {
+  return <button onClick={onDeleteClick}>Delete</button>;
+};
+
+export default DeleteButton;
