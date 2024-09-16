@@ -1,7 +1,13 @@
-export default function addButton() {
+"use client";
+
+import React from "react";
+
+
+export default function AddButton({onAddClick}: {onAddClick: () => void}) {
+
   return (
     <>
-    <button>Add</button>
+    <button onClick={onAddClick}>Add</button>
     </>
   )
 }
